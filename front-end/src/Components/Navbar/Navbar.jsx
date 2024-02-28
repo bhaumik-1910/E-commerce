@@ -26,6 +26,17 @@ const Navbar = () => {
   //     imgx.classList.remove("nav-menu-visible");
   //   }
   // }
+  // let imgx = document.getElementById("img");
+  // const dropdown_toggle = (e) => {
+  //   //menuRaf.current.classList.toggle('nav-menu-visible');
+  //   e.target.classList.toggle('open');
+
+  //   if (e.target === 'img.nav-dropdown') {
+  //     imgx.classList.add("nav-menu-visible");
+  //   } else {
+  //     imgx.classList.remove("nav-menu-visible");
+  //   }
+  // }
 
   return (
     <div className='navbar'>
