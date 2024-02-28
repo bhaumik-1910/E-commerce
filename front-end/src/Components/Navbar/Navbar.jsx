@@ -6,7 +6,7 @@ import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png';
 import { Link } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContext';
-import nav_dropdown from '../Assets/nav_dropdown.png';
+// import nav_dropdown from '../Assets/nav_dropdown.png';
 
 const Navbar = () => {
 
@@ -15,17 +15,17 @@ const Navbar = () => {
   const { getTotalCartItems } = useContext(ShopContext);
   const menuRaf = useRef();
 
-  let imgx = document.getElementById("img");
-  const dropdown_toggle = (e) => {
-    //menuRaf.current.classList.toggle('nav-menu-visible');
-    e.target.classList.toggle('open');
+  // let imgx = document.getElementById("img");
+  // const dropdown_toggle = (e) => {
+  //   //menuRaf.current.classList.toggle('nav-menu-visible');
+  //   e.target.classList.toggle('open');
 
-    if (e.target === 'img.nav-dropdown') {
-      imgx.classList.add("nav-menu-visible");
-    } else {
-      // imgx.classList.remove("nav-menu-visible");
-    }
-  }
+  //   if (e.target === 'img.nav-dropdown') {
+  //     imgx.classList.add("nav-menu-visible");
+  //   } else {
+  //     imgx.classList.remove("nav-menu-visible");
+  //   }
+  // }
 
   return (
     <div className='navbar'>
@@ -34,7 +34,7 @@ const Navbar = () => {
         <p>SHOPPER</p>
       </div>
       {/* toggle image */}
-      <img className='nav-dropdown' id='img' onClick={dropdown_toggle} src={nav_dropdown} alt="" />
+      {/* <img className='nav-dropdown' id='img' onClick={dropdown_toggle} src={nav_dropdown} alt="" /> */}
       <ul raf={menuRaf} className="nav-menu">
         <li onClick={() => { setMenu("shop") }}><Link style={{ textDecoration: 'none' }} to="/">Shop</Link> {menu === 'shop' ? <hr /> : <></>}</li>
         <li onClick={() => { setMenu("mens") }}><Link style={{ textDecoration: 'none' }} to="/mens">Men</Link> {menu === 'mens' ? <hr /> : <></>}</li>

@@ -129,6 +129,7 @@
 @media (max-width:800px) {
     .hero{
         height: 55vh;
+        margin-top: 8vh;
     }
 
     .hero-left {

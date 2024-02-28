@@ -170,17 +170,17 @@
         padding: 10px 0px;
     }
 
-    .nav-dropdown {
+    /* .nav-dropdown {
         display: block;
         width: 30px;
         rotate: -90deg;
         transition: 0.5s;
         position: relative;
         left: 60px;
-    }
+    } */
 
     .nav-menu {
-        display: none;
+        display: flex;
         height: 80px;
         width: 100%;
         position: absolute;
@@ -189,13 +189,13 @@
         top: 55px;
     }
 
-    .nav-menu-visible {
+    /* .nav-menu-visible {
         display: flex;
-    }
+    } */
 
-    .nav-dropdown.open {
+    /* .nav-dropdown.open {
         transform: rotate(90deg);
-    }
+    } */
 }
 
 @media (max-width:500px) {

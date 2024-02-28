@@ -25,6 +25,11 @@ const ListProduct = () => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ id: id })
+    }).then(() => {
+      if (window.confirm("Do you want to Removed ?")) {
+      } else {
+        remove_product(product.id);
+      }
     })
     await fetchInfo();
   }

@@ -76,6 +76,9 @@
     .item-price-old{
         font-size: 12px;
     }
+    .item-price-new{
+        font-size: 15px;
+    }
 }
 
 @media (max-width:500px) {

@@ -13,6 +13,8 @@ app.use(cors());
 //-------------------------------------------------------------------------
 //Database Connection With MongoDB
 mongoose.connect("mongodb+srv://bhaumikkothiya1:bhaumik1910@cluster0.85sbyu3.mongodb.net/E-commerce?retryWrites=true&w=majority");
+// mongoose.connect("mongodb+srv://bhaumikkothiya1:bhaumik1910@cluster0.voc6l9s.mongodb.net/E-commerce");
+
 
 //API Creation
 app.get("/", (req, res) => {
@@ -200,7 +202,7 @@ app.post('/login', async (req, res) => {
         }
     }
     else {
-        res.json({ success: false, error: "Wrong Email-id" })
+        res.json({ success: false, error: "Wrong Email-id" });
     }
 })
 
@@ -210,7 +212,7 @@ app.get('/newcollection', async (req, res) => {
     let products = await Product.find({});
     let newcollection = products.slice(1).slice(-8);
     // console.log("New Collection Fetched");
-    res.send(newcollection);
+    res.send(newcollection); 
 })
 
 //-------------------------------------------------------------------------
@@ -242,7 +244,7 @@ const fetchUser = async (req, res, next) => {
 
 //Creating endpoint for adding product in cartdata
 app.post('/addtocart', fetchUser, async (req, res) => {
-    console.log("Added",req.body.itemId);
+    // console.log("Added",req.body.itemId);
     let userData = await Users.findOne({ _id: req.user.id });
     userData.cartData[req.body.itemId] += 1;
     await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
@@ -252,7 +254,7 @@ app.post('/addtocart', fetchUser, async (req, res) => {
 //-------------------------------------------------------------------------
 //Creating endpoint for remove product in cartdata
 app.post('/removeformcart', fetchUser, async (req, res) => {
-    console.log("remove",req.body.itemId);
+    // console.log("remove",req.body.itemId);
     let userData = await Users.findOne({ _id: req.user.id });
     if (userData.cartData[req.body.itemId] > 0) 
     userData.cartData[req.body.itemId] -= 1;
@@ -263,7 +265,7 @@ app.post('/removeformcart', fetchUser, async (req, res) => {
 //-------------------------------------------------------------------------
 //creating endpoint to get cartdata
 app.post('/getcart',fetchUser,async(req,res)=>{
-    console.log("Get Cart");
+    // console.log("Get Cart");
     let userData = await Users.findOne({_id:req.user.id});
     res.json(userData.cartData);
 })
