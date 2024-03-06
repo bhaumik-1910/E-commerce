@@ -1,0 +1,8 @@
+*{
+    margin: 0;
+}
+
+.container {
+    background: url('../../assets/admin.jpeg')no-repeat center / cover;
+    min-height: 100vh;
+  }

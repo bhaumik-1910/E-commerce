@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CSS/LoginSignup.css';
+import './LoginSignup.css';
 
 const LoginSignup = () => {
 
@@ -30,7 +30,7 @@ const LoginSignup = () => {
     console.log("Login Function Executed", formData);
 
     let responseData;
-    await fetch('http://localhost:4000/login', {
+    await fetch('http://localhost:3001/login', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
@@ -41,7 +41,7 @@ const LoginSignup = () => {
 
     if (responseData.success) {
       localStorage.setItem('aut-token', responseData.token);
-      window.location.replace("/");
+      window.location.replace("/admin");
     }
     else {
       // alert(responseData.errors);
@@ -50,27 +50,27 @@ const LoginSignup = () => {
   }
 
   //Signup Function
-  const signup = async () => {
-    console.log("Sign Up Function Executed", formData);
+    const signup = async () => {
+      console.log("Sign Up Function Executed", formData);
 
-    let responseData;
-    await fetch('http://localhost:4000/singup', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/form-data',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    }).then((response) => response.json()).then((data) => responseData = data);
+      let responseData;
+      await fetch('http://localhost:3001/singup', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/form-data',
+          'Content-Type': 'application/json', 
+        },
+        body: JSON.stringify(formData),
+      }).then((response) => response.json()).then((data) => responseData = data);
 
-    if (responseData.success) {
-      localStorage.setItem('aut-token', responseData.token);
-      window.location.replace("/");
+      if (responseData.success) {
+        localStorage.setItem('aut-token', responseData.token);
+        window.location.replace("/login");
+      }
+      else {
+        alert("responseData.errors");
+      }
     }
-    else {
-      alert(responseData.errors);
-    }
-  }
 
   return (
     <div className='loginsignup'>
@@ -84,10 +84,6 @@ const LoginSignup = () => {
         <button onClick={() => { state === "Login" ? login() : signup()  }}>Continue</button>
         {state === "Sign Up" ? <p className='loginsignup-login'>Already have an account? <span onClick={() => { setState("Login") }}>Login here</span></p>
           : <p className='loginsignup-login'>Create an account? <span onClick={() => { setState("Sign Up") }}>Click Here</span></p>}
-        <div className="loginsignup-agree">
-          <input type="checkbox" name="" id="" />
-          <p>By continuing, i agree to the terms of use & private policy.</p>
-        </div>
       </div>
     </div>
   )
