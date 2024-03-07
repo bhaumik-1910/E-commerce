@@ -9,7 +9,7 @@
     background-position: center;
 }
 .main{
-    padding: 23vh;
+    padding: 23vh; 
 }
 .main h1{
     font-size: 40px;
@@ -19,7 +19,7 @@
     color: #fff;
     width: 600px;
     font-size: 18px;
-    text-align: justify;
+    text-align: justify; 
 }
 
 .button button{
