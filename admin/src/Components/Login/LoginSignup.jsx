@@ -15,18 +15,16 @@ const LoginSignup = () => {
   }
 
   //E-mail validation
-  // const emailValidation = (e) => {
-  //   const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
-  //   if (regEx.test(formData)) {
-  //   } else if (!regEx.test(formData) && formData != "") {
-  //     alert("Email is not valid");
-  //   } else {
-  //     alert(e);
-  //   }
-  // }
+  const emailValidation = (e) => {
+    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
+     if (!formData.email.match(regEx) && formData != "") {
+     return alert("Email is not valid"),exit(0);
+    } 
+  }
 
   //Login Function
   const login = async () => {
+    emailValidation();
     console.log("Login Function Executed", formData);
 
     let responseData;
@@ -45,12 +43,13 @@ const LoginSignup = () => {
     }
     else {
       // alert(responseData.errors);
-      alert("Check the Email and Password");
+      alert("Enter Valid Email and Password ?");
     }
   }
 
   //Signup Function
   const signup = async () => {
+    emailValidation();
     console.log("Sign Up Function Executed", formData);
 
     let responseData;
@@ -65,10 +64,10 @@ const LoginSignup = () => {
 
     if (responseData.success) {
       localStorage.setItem('aut-token', responseData.token);
-      window.location.replace("/login");
+      window.location.replace("/admin");
     }
     else {
-      alert("Failed Signup , Please try again!");
+      alert("Enter Valid Information!");
     }
   }
 
@@ -78,8 +77,8 @@ const LoginSignup = () => {
         <h1>{state}</h1>
         <div className="loginsignup-fields">
           {state === "Sign Up" ? <input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Your Name' required /> : <></>}
-          <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address' />
-          <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
+          <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address' required />
+          <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' required />
         </div>
         <button onClick={() => { state === "Login" ? login() : signup() }}>Continue</button>
         {state === "Sign Up" ? <p className='loginsignup-login'>Already have an account? <span onClick={() => { setState("Login") }}>Login here</span></p>

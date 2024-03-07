@@ -1,26 +1,30 @@
 * {
     margin: 0;
 }
-
-.container{
-    background: url('../../assets/admin.jpeg')no-repeat center / cover;
+.image{
+    background-image: url('../../assets/admin.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 87vh;
+    background-position: center;
 }
 .main{
-    font-size: 20px;
-    color: #fff;
     padding: 23vh;
 }
-h4{
+.main h1{
+    font-size: 40px;
+    color: #fff;
+}
+.main p{
+    color: #fff;
     width: 600px;
-    position: relative;
-    top: 15px;
+    font-size: 18px;
     text-align: justify;
 }
 
 .button button{
     position: relative;
-    top: 30px;
+    top: 10px;
     width: 210px;
     height: 60px;
     font-size: 15px;
@@ -34,3 +38,28 @@ h4{
     vertical-align: middle;
     padding-left: 5px;
 }
+
+@media (max-width:1280px) {
+    .main{
+        padding: 28vh;
+        margin-left: -80px;
+    }
+    .main h1{
+        font-size: 30px;
+    }
+    .main p{
+        font-size: 14px;
+        width:fit-content;
+    }
+    .button button{
+        height: 40px;
+        line-height: 40px;
+    }
+} 
+
+@media (max-width:800px) {
+    .main{
+        padding: 28vh;
+        margin-left: -180px;
+    }
+} 
