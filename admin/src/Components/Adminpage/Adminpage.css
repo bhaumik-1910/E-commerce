@@ -1,8 +1,36 @@
-*{
+* {
     margin: 0;
 }
 
-.container {
+.container{
     background: url('../../assets/admin.jpeg')no-repeat center / cover;
-    min-height: 100vh;
-  }
+    min-height: 87vh;
+}
+.main{
+    font-size: 20px;
+    color: #fff;
+    padding: 23vh;
+}
+h4{
+    width: 600px;
+    position: relative;
+    top: 15px;
+    text-align: justify;
+}
+
+.button button{
+    position: relative;
+    top: 30px;
+    width: 210px;
+    height: 60px;
+    font-size: 15px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+.button img{
+    vertical-align: middle;
+    padding-left: 5px;
+}

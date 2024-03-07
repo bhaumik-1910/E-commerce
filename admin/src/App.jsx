@@ -14,18 +14,17 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Navbar />}>
             <Route path='/' element={<Adminpage />} />
-
             <Route path='login' element={<LoginSignup />} />
-            <Route path='admin' element={<Sidebar />}>
 
-              <Route path="admin/"  />
+            <Route path='admin' element={<Sidebar />}>
+              <Route path="admin/" />
               <Route path="/admin/addproduct" element={<AddProduct />} />
               <Route path="/admin/listproduct" element={<ListProduct />} />
-
             </Route>
+            
           </Route>
         </Routes>
-      </BrowserRouter> 
+      </BrowserRouter>
     </>
   )
 }

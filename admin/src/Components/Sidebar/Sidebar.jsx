@@ -5,25 +5,25 @@ import list_product_item from '../../assets/Product_list_icon.svg';
 
 const Sidebar = () => {
     return (
-    <>
-    <div className="admin">
-        <div className='sidebar'>
-            <Link to={'/admin/addproduct'} style={{ textDecoration: "none" }}>
-                <div className='sidebar-item'>
-                    <img src={add_product_item} alt="" />
-                    <p>Add Product</p>
-                </div>
-            </Link>
+        <>
+            <div className="admin">
+                <div className='sidebar'>
+                    <Link to={'/admin/addproduct'} style={{ textDecoration: "none" }}>
+                        <div className='sidebar-item'>
+                            <img src={add_product_item} alt="" />
+                            <p>Add Product</p>
+                        </div>
+                    </Link>
 
-            <Link to={'/admin/listproduct'} style={{ textDecoration: "none" }}>
-                <div className='sidebar-item'>
-                    <img src={list_product_item} alt="" />
-                    <p>Product List</p>
+                    <Link to={'/admin/listproduct'} style={{ textDecoration: "none" }}>
+                        <div className='sidebar-item'>
+                            <img src={list_product_item} alt="" />
+                            <p>Product List</p>
+                        </div>
+                    </Link>
                 </div>
-            </Link>
-        </div>
-        <Outlet/>
-        </div>
+                <Outlet />
+            </div>
         </>
 
     )

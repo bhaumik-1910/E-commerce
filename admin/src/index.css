@@ -8,9 +8,6 @@ body {
   height: 100vh;
 }
 
-/* admin-page css */
-
-
 /* navbar css */
 .navbar {
   display: flex;
@@ -31,7 +28,7 @@ body {
 
 .nav-login-cart button {
   width: 157px;
-  height: 58px;
+  height: 55px;
   outline: none;
   border: 1px solid #7a7a7a;
   border-radius: 75px;
@@ -120,8 +117,6 @@ body {
     width: 60px;
   }
 }
-
-/* login-sign css */
 
 
 /* admin css */
