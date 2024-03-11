@@ -2,7 +2,7 @@ import React from 'react'
 import './Adminpage.css';
 import arrow from '../../assets/arrow.png';
 import { Link } from 'react-router-dom';
-import background from '../../assets/admin.jpeg';
+// import background from '../../assets/admin.jpeg';
 
 const Adminpage = () => {
     return (

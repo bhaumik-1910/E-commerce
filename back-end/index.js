@@ -6,16 +6,18 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const port = 4000;
-
+// mongoose.connect("mongodb+srv://bhaumikkothiya1:bh@umik1910@cluster0.85sbyu3.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://sparrow:2056King*@cluster0.rxzfnrt.mongodb.net/?retryWrites=true&w=majority");
 app.use(express.json());
 app.use(cors());
 
 //-------------------------------------------------------------------------
 //Database Connection With MongoDB
-mongoose.connect("mongodb+srv://bhaumikkothiya1:bhaumik1910@cluster0.85sbyu3.mongodb.net/E-commerce?retryWrites=true&w=majority");
-// mongoose.connect("mongodb+srv://bhaumikkothiya1:bhaumik1910@cluster0.voc6l9s.mongodb.net/E-commerce");
+// mongoose.connect("mongodb+srv://bhaumikkothiya1:bhaumik1910@cluster0.85sbyu3.mongodb.net/E-commerce?retryWrites=true&w=majority");
+//    mongoose.connect("mongodb+srv://bhaumikkothiya1:bh@umik1910@cluster0.85sbyu3.mongodb.net/E-commerce?retryWrites=true&w=majority&appName=Cluster0");
+// mongoose.connect("mongodb+srv://bhaumikkothiya1:bh@umik1910@cluster0.85sbyu3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
-
+// MongoClient.connect("mongodb+srv://bhaumikkothiya1:bh@umik1910@cluster0.85sbyu3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 //API Creation
 app.get("/", (req, res) => {
     res.send("Express App is Running");
