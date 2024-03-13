@@ -9,11 +9,13 @@ const port = 3001;
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://bhaumikkothiya1:bhaumik1910@cluster0.85sbyu3.mongodb.net/E-commerce-Admin?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://bhaumikkothiya1:bh%40umik1910@website.tubtbgj.mongodb.net/e-commerce-admin");
+
 
 app.get("/", (req, res) => {
     res.send("Express App is Running");
 })
+
 
 //Schema creation For Admin model
 const Admin = mongoose.model('Admin', {

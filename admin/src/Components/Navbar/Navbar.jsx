@@ -13,7 +13,7 @@ const Navbar = () => {
                 <div className="nav-login-cart">
                     {localStorage.getItem('aut-token')
                         ? <button onClick={() => { localStorage.removeItem('aut-token'); window.location.replace('/') }}>Logout</button>
-                        : <Link to='/login'><button>Login</button></Link>}
+                        : <></>}
                 </div>
                 <img src={navProfile} className="nav-profile" alt="" /> 
             </div>
@@ -23,3 +23,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+//<Link to='/login'><button>Login</button></Link>

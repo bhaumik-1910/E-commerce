@@ -6,6 +6,7 @@ import Adminpage from './Components/Adminpage/Adminpage'
 import AddProduct from './Components/AddProduct/AddProduct';
 import ListProduct from './Components/ListProduct/ListProduct';
 import Sidebar from './Components/Sidebar/Sidebar';
+import Protection from './Components/protection';
 
 const App = () => {
   return (
@@ -16,12 +17,11 @@ const App = () => {
             <Route path='/' element={<Adminpage />} />
             <Route path='login' element={<LoginSignup />} />
 
-            <Route path='admin' element={<Sidebar />}>
-              <Route path="admin/" />
-              <Route path="/admin/addproduct" element={<AddProduct />} />
-              <Route path="/admin/listproduct" element={<ListProduct />} />
+              <Route path="admin" element={<Protection><Sidebar /></Protection>}>
+                <Route path="/admin/addproduct" element={<AddProduct />} />
+                <Route path="/admin/listproduct" element={<ListProduct />} />
             </Route>
-            
+
           </Route>
         </Routes>
       </BrowserRouter>

@@ -15,18 +15,16 @@ const LoginSignup = () => {
   }
 
   //E-mail validation
-  // const emailValidation = (e) => {
-  //   const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
-  //   if (regEx.test(formData)) {
-  //   } else if (!regEx.test(formData) && formData != "") {
-  //     alert("Email is not valid");
-  //   } else {
-  //     alert(e);
-  //   }
-  // }
+  const emailValidation = (e) => {
+    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
+    if (!formData.email.match(regEx) && formData != "") {
+      return alert("Email is not valid").exist(false);
+    }
+  }
 
   //Login Function
   const login = async () => {
+    emailValidation();
     console.log("Login Function Executed", formData);
 
     let responseData;
@@ -51,6 +49,7 @@ const LoginSignup = () => {
 
   //Signup Function
   const signup = async () => {
+    emailValidation();
     console.log("Sign Up Function Executed", formData);
 
     let responseData;
@@ -68,7 +67,7 @@ const LoginSignup = () => {
       window.location.replace("/");
     }
     else {
-      alert(responseData.errors);
+      console.log(responseData.errors);
     }
   }
 
@@ -78,10 +77,10 @@ const LoginSignup = () => {
         <h1>{state}</h1>
         <div className="loginsignup-fields">
           {state === "Sign Up" ? <input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Your Name' required /> : <></>}
-          <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address'  />
-          <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password'  />
+          <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address' />
+          <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' />
         </div>
-        <button onClick={() => { state === "Login" ? login() : signup()  }}>Continue</button>
+        <button onClick={() => { state === "Login" ? login() : signup() }}>Continue</button>
         {state === "Sign Up" ? <p className='loginsignup-login'>Already have an account? <span onClick={() => { setState("Login") }}>Login here</span></p>
           : <p className='loginsignup-login'>Create an account? <span onClick={() => { setState("Sign Up") }}>Click Here</span></p>}
         <div className="loginsignup-agree">

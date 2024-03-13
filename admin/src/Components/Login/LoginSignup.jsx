@@ -22,6 +22,7 @@ const LoginSignup = () => {
     } 
   }
 
+
   //Login Function
   const login = async () => {
     emailValidation();
@@ -67,7 +68,7 @@ const LoginSignup = () => {
       window.location.replace("/admin");
     }
     else {
-      alert("Enter Valid Information!");
+      alert("Unique Username and E-mail!");
     }
   }
 
