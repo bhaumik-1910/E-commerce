@@ -180,9 +180,10 @@
     } */
 
     .nav-menu {
+        overflow: hidden;
         display: flex;
         height: 80px;
-        width: 100%;
+        width: 94%;
         position: absolute;
         background-color: white;
         justify-content: center;
@@ -209,7 +210,8 @@
     }
 
     .nav-menu {
-        height: 70px;
+        /* height: 70px; */
+        width: 60vh;
         top: 50px;
     }
 

@@ -17,7 +17,7 @@ const LoginSignup = () => {
   //E-mail validation
   const emailValidation = (e) => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
-    if (!formData.email.match(regEx) && formData != "") {
+    if (!formData.email.match(regEx) && formData !== " ") {
       return alert("Email is not valid").exist(false);
     }
   }
