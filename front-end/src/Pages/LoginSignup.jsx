@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CSS/LoginSignup.css';
+import { toast } from 'react-toastify';
 
 const LoginSignup = () => {
 
@@ -18,7 +19,7 @@ const LoginSignup = () => {
   const emailValidation = (e) => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
     if (!formData.email.match(regEx) && formData !== " ") {
-      return alert("Email is not valid").exist(false);
+      return alert("Email is not valid");//,exit(false)
     }
   }
 
@@ -43,7 +44,7 @@ const LoginSignup = () => {
     }
     else {
       // alert(responseData.errors);
-      alert("Check the Email and Password");
+      toast.error("Check the Email and Password");
     }
   }
 

@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './CartItems.css';
 import { ShopContext } from '../../Context/ShopContext';
 import remove_icon from '../Assets/cart_cross_icon.png';
+import { toast } from 'react-toastify';
 
 const CartItems = () => {
     const { all_product, cartItems, removeFromCart, getTotalCartAmount } = useContext(ShopContext);
@@ -11,7 +12,7 @@ const CartItems = () => {
         if (window.confirm("Do you want to Removed ?")) {
             removeFromCart(e.id); //call remove method
         } else {
-            alert("Item didn't Removed");
+            toast.error("Item didn't Removed");
         }
     }
 

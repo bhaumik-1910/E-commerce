@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './NewsLetter.css';
 import emailjs from '@emailjs/browser';
-
+import { toast } from 'react-toastify';
 
 const NewsLetter = () => {
 
@@ -14,15 +14,15 @@ const NewsLetter = () => {
       .sendForm(
         "service_50y55nn",
         "template_cvimmaj",
-        form.current,
+        form.current, 
         "XH9jQGVwvVXQwSEzI"
       )
       .then(
         () => {
-          console.log('SUCCESS!');
+          toast.success('SUCCESS!');
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          toast.error('FAILED...', error.text);
         },
       );
   };
