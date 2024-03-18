@@ -41,6 +41,7 @@ const LoginSignup = () => {
 
     if (responseData.success) {
       localStorage.setItem('aut-token', responseData.token);
+      toast.success("Login SuccessFully");
       window.location.replace("/admin");
     }
     else {

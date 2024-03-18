@@ -26,8 +26,7 @@ const NewsLetter = () => {
         },
       );
   };
-
-
+  
   return (
     <>
       <div className='newsletter'>
@@ -39,14 +38,13 @@ const NewsLetter = () => {
           <div className="form-container">
             <div className="form-fields">
               <label>Name :</label>
-              <input type="text" name="user_name" placeholder='Your Full Name' required />
+              <input type="text" name="user_name" placeholder='Your Full Name' />
               <label>Email Id :</label>
-              <input type='email' name="user_email" placeholder='Email Address' required />
+              <input type='email' name="user_email" placeholder='Email Address' />
               <input type='hidden' name="to_name" value={"Bhaumik"} />  
               <label>Message :</label>
               <textarea name="message" />
               <button>Send Response</button>
-              {/* onClick={alert()} */}
             </div>
           </div>
         </div>
