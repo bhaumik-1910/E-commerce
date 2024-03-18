@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import './NewsLetter.css';
 import emailjs from '@emailjs/browser';
 
+
 const NewsLetter = () => {
 
   const form = useRef();
@@ -26,12 +27,12 @@ const NewsLetter = () => {
       );
   };
 
+
   return (
     <>
       <div className='newsletter'>
         <h1>Get Exclusive Offers On Your Email</h1>
         <p>Subscribe to our newsletter and stay update</p>
-        bhaumikkothiya1@gmail.com
       </div>
       <form ref={form} onSubmit={sendEmail}>
         <div className='form'>
@@ -40,10 +41,12 @@ const NewsLetter = () => {
               <label>Name :</label>
               <input type="text" name="user_name" placeholder='Your Full Name' required />
               <label>Email Id :</label>
-              <input name='email' type="user_email" placeholder='Email Address' required />
+              <input type='email' name="user_email" placeholder='Email Address' required />
+              <input type='hidden' name="to_name" value={"Bhaumik"} />  
               <label>Message :</label>
               <textarea name="message" />
-              <button>Subscribe</button>
+              <button>Send Response</button>
+              {/* onClick={alert()} */}
             </div>
           </div>
         </div>
