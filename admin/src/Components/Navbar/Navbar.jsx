@@ -17,17 +17,16 @@ const Navbar = () => {
                         ? <button onClick={() => { localStorage.removeItem('aut-token'); window.location.replace('/') }}>Logout</button>
                         : <></>}
                 </div> */}
-             
 
                 <div className="dropdown">
                     <div className="dropbtn">
                         {localStorage.getItem('aut-token')
-                            ? <RiAdminFill onClick={() => { localStorage.removeItem('aut-token');}}></RiAdminFill>
+                            ? <RiAdminFill style={{background:'black',padding:'10px',height:'45px',width:'90px',borderRadius:'10px',marginTop:'-4px'}}  onClick={() => { localStorage.removeItem('aut-token'); }}></RiAdminFill>
                             : <></>}
                     </div>
                     <div className="dropdown-content">
                         {localStorage.getItem('aut-token')
-                            ? <a href="#" onClick={() => { localStorage.removeItem('aut-token'); window.location.replace('/') }}>Admin</a>
+                            ? <a href="#" onClick={() => { localStorage.removeItem('aut-token'); window.location.replace('#') }}>Admin</a>
                             : <></>}
                         {localStorage.getItem('aut-token')
                             ? <a href="#" onClick={() => { localStorage.removeItem('aut-token'); window.location.replace('/') }}>Logout</a>
