@@ -107,6 +107,23 @@ app.post('/addproduct', async (req, res) => {
     })
 })
 
+//------------------------------------------------------------------------------------/
+// app.patch('/update/:id',async(req,res)=>{
+//     const id =req.params.id
+
+//   data = await Product.findOneAndUpdate({id},{
+//         $set :{
+//             name : req.body.name ?  req.body.name : name,
+//             image : req.body.image? req.body.image : image,
+//             category : req.body.category? req.body.category : category ,
+//             new_price: req.body.new_price ? req.body.new_price : new_price,
+//             old_price: req.body.old_price? req.body.old_price : old_price
+
+//         }
+//     })
+//     res.send(data);
+
+// })
 //-------------------------------------------------------------------------
 // Creating API for deleting Products
 app.post('/removeproduct', async (req, res) => {
