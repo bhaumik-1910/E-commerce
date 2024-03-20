@@ -1,8 +1,27 @@
 import React, { useState } from 'react';
 import './LoginSignup.css';
 import { toast } from 'react-toastify';
+// import eye from '../../assets/eye.png';
+// import { IoEyeSharp } from "react-icons/io5";
 
 const LoginSignup = () => {
+
+  //show password
+  const [checktype, setChecktype] = useState("password");
+  const [showhidetext, setShowhidetext] = useState("Show");
+
+  const handleshowhidepassword = (e) => {
+    const gettype = e.target.value;
+    console.log(gettype);
+    if (gettype === "password") {
+      setChecktype("text");
+      setShowhidetext("Hide");
+    } else {
+      setChecktype("password");
+      setShowhidetext("Show");
+    }
+  }
+
 
   const [state, setState] = useState("Login");
 
@@ -18,9 +37,9 @@ const LoginSignup = () => {
   //E-mail validation
   const emailValidation = (e) => {
     const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9*-]+\.[a-z]{2,8}(.[a-z{2,8}])?/g
-     if (!formData.email.match(regEx) && formData != "") {
-     return toast.error("Email is not valid"),exit(0);
-    } 
+    if (!formData.email.match(regEx) && formData != "") {
+      return toast.error("Email is not valid"), exit(0);
+    }
   }
 
 
@@ -81,7 +100,12 @@ const LoginSignup = () => {
         <div className="loginsignup-fields">
           {state === "Sign Up" ? <input name='username' value={formData.username} onChange={changeHandler} type="text" placeholder='Your Name' required /> : <></>}
           <input name='email' value={formData.email} onChange={changeHandler} type="email" placeholder='Email Address' required />
-          <input name='password' value={formData.password} onChange={changeHandler} type="password" placeholder='Password' required />
+          <input name='password' value={formData.password} onChange={changeHandler} type={checktype} placeholder='Password' required />
+
+           
+          <button className='btn' type='button' value={checktype} onClick={(e) => handleshowhidepassword(e)}>{showhidetext}</button>
+          
+
         </div>
         <button onClick={() => { state === "Login" ? login() : signup() }}>Continue</button>
         {state === "Sign Up" ? <p className='loginsignup-login'>Already have an account? <span onClick={() => { setState("Login") }}>Login here</span></p>

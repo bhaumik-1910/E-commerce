@@ -21,7 +21,7 @@ const Navbar = () => {
                 <div className="dropdown">
                     <div className="dropbtn">
                         {localStorage.getItem('aut-token')
-                            ? <RiAdminFill style={{background:'#454545',padding:'10px',height:'45px',width:'90px',borderRadius:'10px',marginTop:'-4px'}}  onClick={() => { localStorage.removeItem('aut-token'); }}></RiAdminFill>
+                            ? <RiAdminFill style={{border:'2px solid black', padding:'10px',height:'45px',width:'90px',borderRadius:'10px',marginTop:'-4px'}}  onClick={() => { localStorage.removeItem('aut-token'); }}></RiAdminFill>
                             : <></>}
                     </div>
                     <div className="dropdown-content">

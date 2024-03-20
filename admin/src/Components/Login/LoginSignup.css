@@ -47,6 +47,13 @@
 .loginsignup-fields input::placeholder {
     color: black;
 }
+
+/* .btn button{
+    width: 30px;
+    height: 15px;
+    color: #d21d1d;
+    background:rgb(203, 20, 20);
+} */
 .loginsignup-container button {
     width: 100%;
     height: 65px;
